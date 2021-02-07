@@ -25,24 +25,24 @@ Use appropriate data types and constraints:
 
 A **project** is what needs to be done and is stored in a `projects` table with the following columns:
 
-- [ ] `project_id` - primary key
-- [ ] `project_name` - required
-- [ ] `project_description` - optional
-- [ ] `project_completed` - required but the database defaults it to not completed if not provided
+- [ X ] `project_id` - primary key
+- [ X ] `project_name` - required
+- [ X ] `project_description` - optional
+- [ X ] `project_completed` - required but the database defaults it to not completed if not provided
 
 A **resource** is anything needed to complete a project and is stored in a `resources` table with the following columns:
 
-- [ ] `resource_id` - primary key
-- [ ] `resource_name` - required and unique
-- [ ] `resource_description` - optional
+- [ X ] `resource_id` - primary key
+- [ X ] `resource_name` - required and unique
+- [ X ] `resource_description` - optional
 
 A **task** is one of the steps needed to complete a project and is stored in a `tasks` table with the following columns:
 
-- [ ] `task_id` - primary key
-- [ ] `task_description` - required
-- [ ] `task_notes` - optional
-- [ ] `task_completed` - required but the database defaults it to not completed if not provided
-- [ ] `project_id` - required and points to an actual `project_id` in the `projects` table
+- [ X ] `task_id` - primary key
+- [ X ] `task_description` - required
+- [ X ] `task_notes` - optional
+- [ X ] `task_completed` - required but the database defaults it to not completed if not provided
+- [ X ] `project_id` - required and points to an actual `project_id` in the `projects` table
 
 A **resource assignment** connects a resource and a project, and is stored in a `project_resources` table. You decide what columns to use.
 
@@ -63,7 +63,7 @@ Your finished project must meet all of the following requirements:
     - Even though `project_completed` is stored as an integer, the API uses booleans when interacting with the client
     - Example of response body: `{"project_id":1,"project_name":"bar","project_description":null,"project_completed":false}`
 
-  - [ ] `[GET] /api/projects`
+  - [ X ] `[GET] /api/projects`
     - Even though `project_completed` is stored as an integer, the API uses booleans when interacting with the client
     - Example of response body: `[{"project_id":1,"project_name":"bar","project_description":null,"project_completed":false}]`
 
@@ -106,6 +106,19 @@ There are two possible ways to submit this project to Canvas. Lambda Staff will 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Explain the difference between Relational Databases and SQL.
+
+in relational databases the data is stored in formats of rows and columns, we can think of these as a spreadshhet, basically columns and rows which will create a table. 
+SQL is the standard language that is used to manage the database and what is within them, it is a query language. 
+
+
 2. Why do tables need a Primary Key?
+
+tables need primary keys because it is a way to identify each entry in the database uniquely. this will be autoincremented and will be the ID
+
 3. What is the name given to a table column that references the Primary Key on another table?
+
+this would be called a foreign key.
+
 4. What do we need in order to have a _many to many_ relationship between two tables?
+
+we need to introduce an intermediary table that holds foreign keys that reference the primary key on the related tables
