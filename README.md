@@ -25,24 +25,24 @@ Use appropriate data types and constraints:
 
 A **project** is what needs to be done and is stored in a `projects` table with the following columns:
 
-- [ ] `project_id` - primary key
-- [ ] `project_name` - required
-- [ ] `project_description` - optional
-- [ ] `project_completed` - required but the database defaults it to not completed if not provided
+- [ X ] `project_id` - primary key
+- [ X ] `project_name` - required
+- [ X ] `project_description` - optional
+- [ X ] `project_completed` - required but the database defaults it to not completed if not provided
 
 A **resource** is anything needed to complete a project and is stored in a `resources` table with the following columns:
 
-- [ ] `resource_id` - primary key
-- [ ] `resource_name` - required and unique
-- [ ] `resource_description` - optional
+- [ X ] `resource_id` - primary key
+- [ X ] `resource_name` - required and unique
+- [ X ] `resource_description` - optional
 
 A **task** is one of the steps needed to complete a project and is stored in a `tasks` table with the following columns:
 
-- [ ] `task_id` - primary key
-- [ ] `task_description` - required
-- [ ] `task_notes` - optional
-- [ ] `task_completed` - required but the database defaults it to not completed if not provided
-- [ ] `project_id` - required and points to an actual `project_id` in the `projects` table
+- [ X ] `task_id` - primary key
+- [ X ] `task_description` - required
+- [ X ] `task_notes` - optional
+- [ X ] `task_completed` - required but the database defaults it to not completed if not provided
+- [ X ] `project_id` - required and points to an actual `project_id` in the `projects` table
 
 A **resource assignment** connects a resource and a project, and is stored in a `project_resources` table. You decide what columns to use.
 
@@ -63,7 +63,7 @@ Your finished project must meet all of the following requirements:
     - Even though `project_completed` is stored as an integer, the API uses booleans when interacting with the client
     - Example of response body: `{"project_id":1,"project_name":"bar","project_description":null,"project_completed":false}`
 
-  - [ ] `[GET] /api/projects`
+  - [ X ] `[GET] /api/projects`
     - Even though `project_completed` is stored as an integer, the API uses booleans when interacting with the client
     - Example of response body: `[{"project_id":1,"project_name":"bar","project_description":null,"project_completed":false}]`
 
